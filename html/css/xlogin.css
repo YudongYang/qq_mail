@@ -1,0 +1,389 @@
+/* 模仿QQ邮箱首页 xlogin 样式,
+   https://mail.qq.com
+   time: 2017.09.12
+*/
+
+body {
+	font: 12px "lucida Grande",Verdana,"Microsoft YaHei";
+	display: block;
+}
+
+body, ul {
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.login, .login_no_qlogin {
+	position: relative;
+	margin: 0 auto;
+	width: 334px;
+	border: 0;
+	background-color: #ffffff;
+}
+
+.login .header, .login_no_qlogin .header {
+	position: relative;
+	height:  50px;
+	border-bottom: 1px solid #c0cdd9;
+	background-color: #f9fbfe;
+}
+
+.header .switch {
+	position: absolute;
+	left: 53px;
+	height: 46px;
+	bottom: 0;
+	font-size: 16px;
+}
+
+.header .switch .switch_btn {
+	color: #999;
+	display: inline-block;
+	height: 45px;
+	line-height: 45px;
+	outline: 0;
+}
+
+.header .switch .switch_btn_focus {
+	color: #333;
+	display: inline-block;
+	height: 45px;
+	line-height: 45px;
+	outline: 0;
+}
+
+.header .switch #switcher_qlogin {
+	margin-right: 60px;
+}
+
+.header .switch a {
+	text-decoration: none;
+}
+
+.header .switch a:hover {
+	color: #333;
+}
+
+.switch_bottom {
+	bottom: 0px;
+	border-bottom: 1px solid #465767;
+	position: absolute;
+}
+
+.loginTips {
+	margin-bottom: -26px;
+	position: relative;
+	min-height: 28px;
+	height: auto;
+	padding-top: 4px;
+}
+
+.loginTips .error_tips {
+	width: auto;
+	color: #c00;
+	border: none;
+	background: none;
+	position: static;
+}
+
+.loginTips .error_tips .error_logo {
+	background-image: url(../img/icon_ptloginpage1e);
+	background-position: -16px -16px;
+	outline: none;
+	background-repeat: no-repeat;
+	position: absolute;
+	left: 3px;
+	height: 18px;
+	line-height: 18px;
+	width: 18px;
+}
+
+.loginTips .error_tips .error_message {
+	color: red;
+	padding-right: 15px;
+	display: inline-block;
+	padding-left: 20px;
+	line-height:  18px;
+	vertical-align: middle;
+	text-align: left;
+}
+
+.qlogin {
+	height: 317px;
+	width: 304px;
+	position: relative;
+	margin: 0 auto;
+}
+
+.qlogin .qlogin_show {
+	top: 25px;
+	left: 12px;
+	width: 280px;
+	margin-top: 10px;
+	height: 200px;
+	position: absolute;
+	overflow: hidden;
+}
+
+.qlogin .qlogin_list {
+	width: 294px;
+	height: 100%;
+	position: absolute;
+	text-align: center;
+}
+
+.qlogin .qr_eara {
+	width: 156px;
+	left: -14px;
+	display: inline-block;
+	height: 100%;
+	text-align: center;
+	position: relative;
+}
+
+.qlogin .qr_eara .qr_safe_tips {
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	margin-left: 5px;
+	font-size: 14px;
+	font-weight: 700;
+}
+
+.qlogin .qr_eara .qr_img {
+	position: absolute;
+	left: 12px;
+	height: 126px;
+	width: 126px;
+	top: 30px;
+	border: 1px solid #D3D3D3;
+	padding: 3px;
+}
+
+.qlogin .qr_eara .qr_app_name {
+	display: inline-block;
+	text-align: center;
+	position: absolute;
+	bottom: 0;
+	left: 4px;
+	vertical-align: middle;
+	width: 100%;
+	overflow: hidden;
+}
+
+.qlogin .qr_eara .qr_info_link {
+	background-image: url(../img/icon_3_tiny.png);
+	background-repeat: no-repeat;
+	background-position: 0 -541px;
+	color: grey;
+	display: inline-block;
+	height: 30px;
+	line-height: 30px;
+	width: 152px;
+	text-decoration: none;
+}
+
+.qlogin .qr_eara .qr_info_link:hover {
+	background-position: 0 -573px;
+	text-decoration:  none;
+}
+/* 原网页 bottom 和其他内容不在同一个父级组件中，不方便，这里全部重写，重新定位了 */
+.qlogin .bottom {
+	margin-bottom: 15px;
+	width: 284px;
+	right: 10px;
+	height: 16px;
+	top: 284px;
+	position: absolute;
+	text-align: right;
+	font-size: 12px;
+	display: block;
+}
+
+.check_tips {
+	bottom: -1px;
+	left: 0px;
+	position: absolute;
+}
+
+.check_tips .uncheck {
+	height: 16px;
+	width: 16px;
+	border: 1px solid #96a5b4;
+	float: left;
+	background-image: url(../img/icon_ptloginpage1e9c5d.png);
+	background-position: -38px -16px;
+}
+
+.check_tips .check_tips_word {
+	height: 18px;
+	line-height: 18px;
+	cursor: pointer;
+	margin-left: 5px;
+}
+
+.bottom .dotted {
+	color: #bfbfbf;
+	margin: 0px 5px 0px 1px; 
+}
+
+.bottom a {
+	color: #225592;
+	text-decoration: none;
+}
+
+.bottom a:hover {
+	color: #225592;
+	text-decoration: underline;
+}
+
+.web_qr_login {
+	display: block;
+	height: 330px;
+	width: 304px;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+}
+
+.web_qr_login .web_qr_login_show {
+	position: absolute;
+	top: 0;
+}
+
+.web_login {
+	width: 306px;
+	padding-bottom: 0;
+	min-height: 289px;
+	position: relative;
+}
+
+.web_login .login_form {
+	width: 284px;
+	margin: 0 auto;
+}
+
+.web_login .username_eara {
+	height: 50px;
+	position: relative;
+}
+
+.web_login .input_tips {
+	top: 12px;
+	position: absolute;
+	left: 13px;
+	font-size: 14px;
+	line-height: 16px;
+	color: #aaa;
+	cursor: text;
+}
+
+.web_login .input_box {
+	background: none;
+	border: 1px solid #96a5b4;
+	height: 38px;
+	width: 282px;
+	border-radius: 2px;
+}
+
+.web_login .input_box_style {
+	top: 0px;
+	padding: 10px 40px 10px 10px;
+	left: 0px;
+	border-radius: 3px;
+	width: 232px;
+	height: 18px;
+	line-height: 18px;
+	border: none;
+	background: 0 0;
+	color: #333;
+	font-size: 16px;
+}
+
+.web_login .input_box_del {
+	right: 10px;
+	height: 22px;
+	width: 22px;
+	top: 10px;
+	position: absolute;
+	cursor: pointer;
+	background-repeat: no-repeat;
+	background: 0 0;
+	background-image: url(../img/ptlogin_delete1e9c5d.png);
+}
+
+.web_login .input_box_del:hover {
+	right: 10px;
+	height: 22px;
+	width: 22px;
+	top: 10px;
+	position: absolute;
+	cursor: pointer;
+	background-repeat: no-repeat;
+	background: 0 -22px;
+	background-image: url(../img/ptlogin_delete1e9c5d.png);
+}
+
+.web_login .password_eara {
+	height: 50px;
+	position: relative;
+}
+
+.web_login .tips {
+	height: 30px;
+	width: 280px;
+	position: relative;
+	margin: 0 auto;
+}
+
+.web_login .submit {
+	margin-top: 23px;
+	height: 177px;
+	position: relative;
+}
+
+.web_login .submit_button {
+	right: 0px;
+	top: 25px;
+	background-color: #5a98de;
+	outline: none;
+	border-radius: 3px;
+	position: absolute;
+	left: 0;
+}
+
+.web_login .submit_button .btn {
+	background: none;
+	height: 40px;
+	line-height: 39px;
+	width: 100%;
+	outline: none;
+	font-weight: normal;
+	border: none;
+	font-size: 18px;
+	color: #fff;
+	cursor: pointer;
+}
+
+.submit .check_tips {
+	left: 0px;
+	top: -9px;
+}
+
+.web_qr_login .bottom {
+	width: 282px;
+	right: 12px;
+	margin-bottom: 15px;
+	bottom: 2px;
+	height: 16px;
+	position: absolute;
+	text-align: right;
+	font-size: 12px;
+}

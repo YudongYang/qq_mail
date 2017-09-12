@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-cmn">
+
+<head>
+    <title>登录QQ邮箱</title>
+    <meta name="renderer" content="webkit">
+    <meta name="save" content="history">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="就模仿写个 QQ 邮箱登陆页面">
+    <meta name="theme-color" content="gray">
+    <link rel="stylesheet" type="text/css" href="./css/qqmail.css">
+    <script src="js/qqmail.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <a class="header_logo" href="#">(反正这里看不到)QQ邮箱</a>
+            <div class="header_link">
+                <a href="#">基本版</a> |
+                <a href="#">English</a> |
+                <a href="http://app.mail.qq.com/">手机版</a> |
+                <a href="http://exmail.qq.com?referrer=index_top">企业邮箱</a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="login_msg"></div>
+            <div class="content_wrapper">
+                <div class="login_container" id="login">
+                	<iframe height="100%" width="100%" scrolling="no" frameborder="0" src="./xlogin.html"></iframe>
+                </div>
+                <div class="login_pictures" id="content_wrapper_picture"></div>
+            </div>
+        </div>
+        <div class="footer">
+            <a href="http://www.tencent.com" target="_blank">关于腾讯</a> |
+            <a href="http://mail.qq.com/cgi-bin/readtemplate?check=false&t=mail_clause" target="_blank">服务条款</a> |
+            <a href="http://kf.qq.com/product/email.html" target="_blank">客服中心</a> |
+            <a href="http://mail.qq.com/contact_us.html" target="_blank">联系我们</a> |
+            <a href="http://service.mail.qq.com" target="_blank">帮助中心</a> |
+            <spana class="gray">©1998 - 2017 Tencent Inc. All Rights Reserved.</span>
+        </div>
+    </div>
+    <script type="text/javascript">
+    // 随机加载登陆图片
+    document.getElementById('content_wrapper_picture').innerHTML = randomLoginPicture();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,159 @@
+/* 模仿QQ邮箱首页样式
+   https://mail.qq.com
+   time: 2017.09.11
+*/
+/* 处理各个浏览器对样式的不同解析 */
+body, p, d1, dd, h1, h2, h3, h4, h5, h6, pre, form, fieldset, legend {
+    margin: 0;
+}
+div {
+	display: block;
+}
+
+html {
+    display: block;
+    overflow: auto\9;
+}
+
+html, body {
+    background-color: #fff;
+}
+
+head {
+    display: none;
+}
+
+body {
+    display: block;
+    font-size: 12px;
+}
+/* 字体优先 */
+body, input, textarea, select, button {
+    font-family: "lucida Grande", Verdana, "Microsoft YaHei";
+}
+
+.container {
+	min-height: 500px;
+}
+/* 页面头 */
+.header {
+	height: 62px;
+	overflow: hidden;
+	zoom: 1;
+	border-bottom: 1px solid #d6dfea;
+	background: #eff4fa;
+}
+
+.header a, .footer a {
+	color: #1d5494;
+	text-decoration: none;
+}
+
+.container a {
+	color: #225592;
+	text-decoration: none;
+}
+
+.header_logo {
+	float: left;
+	width: 182px;
+	height: 35px;
+	margin-top: 14px;
+	margin-left: 40px;
+	text-indent: -9999em;
+	background-size: 182px 35px;
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-image: url(../img/qqmail_logo_default.png)
+}
+
+.header_link {
+	overflow: hidden;
+	margin-top: 16px;
+	padding-right: 40px;
+	line-height: 30px;
+	text-align: right;
+	color: #b6b6b6;
+}
+
+.content {
+	width: 960px;
+	margin: 32px auto;
+	padding: 0 24px;
+}
+
+.content_wrapper {
+	min-height: 372px;
+	padding-top: 40px;
+	margin: 0 20px 60px 25px;
+}
+
+.login_container {
+	float: right;
+	border: 1px solid #a0b1c4;
+	background-color: #fff;
+	position: relative;
+	padding: 0;
+	border-radius: 5px;
+	overflow: hidden;
+	width: 334px;
+	height: 387px;
+	visibility: visible;
+}
+
+.login_pictures {
+	position: relative;
+	margin-right: 395px;
+}
+
+.login_pictures_picture {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	height: 400px;
+	background: no-repeat;
+}
+
+.login_pictures_txt {
+	padding-top: 25px;
+	position: relative;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 24px;
+}
+
+.login_pictures_title {
+	line-height: 26px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	font-size: 24px;
+	font-weight: normal;
+	color: #6f95c8;
+}
+
+.login_pictures_info {
+	margin-top: 6px;
+	font-size: 12px;
+}
+
+.gray {
+	color: #868686;
+}
+
+.footer {
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	clear both;
+	line-height: 36px;
+	text-align: center;
+	color: #b6b6b6;
+	background-color: #eff4fa;
+	border-top: 1px solid #d6dfea;
+}
+
+a:hover {
+	text-decoration: underline;
+}

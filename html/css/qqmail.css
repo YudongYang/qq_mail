@@ -1,4 +1,4 @@
-/* 模仿QQ邮箱首页样式
+/* 模仿QQ邮箱首页样式，参数均参考原网页参数
    https://mail.qq.com
    time: 2017.09.11
 */
@@ -6,21 +6,9 @@
 body, p, d1, dd, h1, h2, h3, h4, h5, h6, pre, form, fieldset, legend {
     margin: 0;
 }
-div {
-	display: block;
-}
-
-html {
-    display: block;
-    overflow: auto\9;
-}
 
 html, body {
     background-color: #fff;
-}
-
-head {
-    display: none;
 }
 
 body {
@@ -32,18 +20,29 @@ body, input, textarea, select, button {
     font-family: "lucida Grande", Verdana, "Microsoft YaHei";
 }
 
+/*
+  整个内容框
+  超出部分滚动条出现
+ */
 .container {
 	min-height: 500px;
 }
-/* 页面头 */
+/*
+  页面头
+  固定高度
+  块内下部有 border
+*/
 .header {
 	height: 62px;
 	overflow: hidden;
-	zoom: 1;
 	border-bottom: 1px solid #d6dfea;
 	background: #eff4fa;
 }
 
+/*
+  重新定义 a 标签为无下划线
+  改变颜色
+*/
 .header a, .footer a {
 	color: #1d5494;
 	text-decoration: none;
@@ -54,58 +53,77 @@ body, input, textarea, select, button {
 	text-decoration: none;
 }
 
+/* 鼠标放上去的时候有 underline */
+a:hover {
+    text-decoration: underline;
+}
+
+/*
+  页面头
+  那个 qq 邮箱的 logo
+*/
 .header_logo {
 	float: left;
 	width: 182px;
 	height: 35px;
 	margin-top: 14px;
 	margin-left: 40px;
-	text-indent: -9999em;
+	text-indent: -9999em; /* 缩进负数，看不到了 */
 	background-size: 182px 35px;
 	background-repeat: no-repeat;
 	background-position: left center;
 	background-image: url(../img/qqmail_logo_default.png)
 }
 
+/* 头部标签向右对齐并调整位置与颜色 */
 .header_link {
-	overflow: hidden;
 	margin-top: 16px;
 	padding-right: 40px;
 	line-height: 30px;
 	text-align: right;
 	color: #b6b6b6;
+    overflow: hidden;
 }
 
+/*
+  登陆页面主要部分
+ */
 .content {
 	width: 960px;
-	margin: 32px auto;
+	margin: 32px auto; /* 居中的正确解法 */
 	padding: 0 24px;
 }
 
+/* 整个中间的内容面板 */
 .content_wrapper {
 	min-height: 372px;
 	padding-top: 40px;
 	margin: 0 20px 60px 25px;
 }
 
+/* 登陆框位置微调 */
 .login_container {
-	float: right;
 	border: 1px solid #a0b1c4;
 	background-color: #fff;
 	position: relative;
 	padding: 0;
-	border-radius: 5px;
-	overflow: hidden;
+	border-radius: 5px; /* CSS3 圆角 */
 	width: 334px;
 	height: 387px;
-	visibility: visible;
+    float: right; /* 位置总不对，强行拖一下 */
+    overflow: hidden;
 }
 
+/*
+  图片框
+  定位以及改大小
+ */
 .login_pictures {
-	position: relative;
 	margin-right: 395px;
+    position: relative;
 }
 
+/* 固定图片 */
 .login_pictures_picture {
 	position: absolute;
 	left: 0;
@@ -115,45 +133,46 @@ body, input, textarea, select, button {
 	background: no-repeat;
 }
 
+/* 固定文字 */
 .login_pictures_txt {
 	padding-top: 25px;
-	position: relative;
 	font-size: 14px;
-	font-weight: normal;
 	line-height: 24px;
+    font-weight: normal;
+    position: relative;
 }
 
+/* QQ 邮箱，常联系！ */
 .login_pictures_title {
 	line-height: 26px;
 	margin-top: 15px;
 	margin-bottom: 15px;
 	font-size: 24px;
-	font-weight: normal;
 	color: #6f95c8;
+    font-weight: normal;
 }
 
+/* 那行灰色小字 */
 .login_pictures_info {
 	margin-top: 6px;
 	font-size: 12px;
 }
 
+/* 自定义的灰色 */
 .gray {
 	color: #868686;
 }
 
+/* 页脚，紧贴浏览器底部 */
 .footer {
-	position: fixed;
+	position: fixed; /* 相对浏览器的绝对定位 */
+    clear: both; /* 不允许 float */
+    text-align: center;
 	left: 0;
 	right: 0;
 	bottom: 0;
-	clear both;
 	line-height: 36px;
-	text-align: center;
 	color: #b6b6b6;
 	background-color: #eff4fa;
-	border-top: 1px solid #d6dfea;
-}
-
-a:hover {
-	text-decoration: underline;
+	border-top: 1px solid #d6dfea; /* 底部上面那里有个 border */
 }

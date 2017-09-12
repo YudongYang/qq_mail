@@ -14,20 +14,23 @@
 </head>
 
 <body>
+    <!-- 登陆框内容 -->
     <div class="login">
+        <!-- tab 头 -->
         <div class="header">
             <div class="switch">
                 <!-- 这两个 a 标签一定要写在同一行，要不中间会默认留个空白，和原网页样式不一样，很麻烦，最简单就是写在同一行了 -->
                 <a class="switch_btn" id="switcher_qlogin" href="javascript:void(0)">快速登录</a><a class="switch_btn_focus" id="switcher_plogin" href="javascript:void(0)">帐号密码登录</a>
-                <div class="switch_bottom"></div>
             </div>
         </div>
+        <!-- 登陆失败时会在这里提示 -->
         <div class="loginTips">
             <div class="error_tips" style="display: none;">
                 <span class="error_logo"></span>
                 <span class="error_message">你输入的帐号或密码不正确，请重新输入。</span>
             </div>
         </div>
+        <!-- 二维码登陆 -->
         <div class="qlogin" id="qr_login_panel" style="display: none;">
             <div class="qlogin_show">
                 <div class="qlogin_list">
@@ -35,9 +38,11 @@
                 <span class="qr_safe_tips">
                     安全登录，防止被盗
                 </span>
+                    <!-- 暂时先做成静态的吧，做个会变化的欺骗性更强 -->
                     <img class="qr_img" src="img/qr_server_error.png" />
                     <span class="qr_app_name">
-                    <a class="qr_info_link" href="http://im.qq.com/mobileqq/#from=login" target="_blank">使用QQ手机版扫描登录</a>
+                    <!-- 不给拖动 -->
+                    <a class="qr_info_link" draggable="false" href="http://im.qq.com/mobileqq/#from=login" target="_blank">使用QQ手机版扫描登录</a>
                 </span>
                     </span>
                 </div>
@@ -52,6 +57,7 @@
                 <a id="feedback_qlogin" href="http://support.qq.com/discuss/350_1.shtml" target="_blank">意见反馈</a>
             </div>
         </div>
+        <!-- 使用账号和密码登陆，原网页并没有将这两部分分开成两个容器里面处理，有点麻烦，嗯，改以下就好了嘛，虽然看起来好像为了处理更复杂的情况 -->
         <div class="web_qr_login" id="web_login_panel" >
             <div class="web_qr_login_show">
                 <div class="web_login">

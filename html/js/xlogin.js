@@ -126,8 +126,8 @@ var showTips = function(tipsMessage) {
 }
 
 $('#submit').click(function() {
-    var username = $('#username_input').val()
-    var password = $('#password_input').val()
+    var username = $('#username_input').val().trim()
+    var password = $('#password_input').val().trim()
     console.log(username)
     console.log(password)
     if (!username && !password) {
@@ -144,7 +144,8 @@ $('#submit').click(function() {
         password = 'md5(' + password + ')'
         console.log(password)
         $.post('check/login', { 'username': username, 'password': password }, function(data, textStatus, jqXHR) {
-            if (data && data.status === 200) {
+            var resData = JSON.parse(data)
+            if (resData && resData.status === 200) {
                 alert('Login Success')
             } else {
                 showTips('你输入的帐号或密码不正确，请重新输入。')

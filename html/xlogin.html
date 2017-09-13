@@ -24,9 +24,9 @@
         </div>
         <!-- 登陆失败时会在这里提示 -->
         <div class="loginTips">
-            <div class="error_tips" style="display: none;">
+            <div class="error_tips" id="error_tips" style="display: none;">
                 <span class="error_logo"></span>
-                <span class="error_message">你输入的帐号或密码不正确，请重新输入。</span>
+                <span class="error_message" id="error_message"></span>
             </div>
         </div>
         <!-- 二维码登陆 -->
@@ -38,17 +38,22 @@
                     安全登录，防止被盗
                 </span>
                     <!-- 暂时先做成静态的吧，做个会变化的欺骗性更强 -->
-                    <img class="qr_img" src="img/qr_server_error.png" />
+                    <img class="qr_img" id="qr_img_box" src="img/qr_server_error.png" />
                     <span class="qr_app_name">
                     <!-- 不给拖动 -->
                     <a class="qr_info_link" draggable="false" href="http://im.qq.com/mobileqq/#from=login" target="_blank">使用QQ手机版扫描登录</a>
                 </span>
+                    <span class="qr_for_hover" id="qr_for_hover"></span>
                     </span>
                 </div>
             </div>
+            <!-- 手机 QQ 那张图 -->
+            <div class="qr_tips" id="qr_tips">
+                <div class="qr_tips_pic" id="qr_tips_pic"></div>
+            </div>
             <div class="bottom">
                 <div class="check_tips" title="为了确保你的信息安全，不建议在网吧等公共环境勾选此项">
-                    <a class="uncheck" href="javascript:void(0)"></a>
+                    <a class="uncheck" id="qrCheck" href="javascript:void(0)"></a>
                     <label class="check_tips_word">下次自动登录</label>
                 </div>
                 <a href="http://zc.qq.com/chs/index.html?type=1" target="_blank">注册新帐号</a>
@@ -57,41 +62,44 @@
             </div>
         </div>
         <!-- 使用账号和密码登陆，原网页并没有将这两部分分开成两个容器里面处理，有点麻烦，嗯，改以下就好了嘛，虽然看起来好像为了处理更复杂的情况 -->
-        <div class="web_qr_login" id="web_login_panel" >
+        <div class="web_qr_login" id="web_login_panel">
             <div class="web_qr_login_show">
                 <div class="web_login">
                     <div class="tips">
                     </div>
                     <div class="login_form">
-                        <form>
-                            <div class="username_eara">
+                        <!-- 异步认证不用 form 了 -->
+                        <!-- <form id="loginForm" name="loginForm" method="post" action="check"> -->
+                        <div id="loginForm">
+                            <div class="username_eara" id="username_eara">
                                 <label class="input_tips">
                                     支持QQ号/邮箱/手机号登录
                                 </label>
                                 <div class="input_box">
-                                    <input type="text" class="input_box_style" name="">
-                                    <a class="input_box_del" href="javascript:void(0)"></a>
+                                    <input type="text" class="input_box_style" name="username_input" id="username_input">
+                                    <a class="input_box_del" href="javascript:void(0)" hidden="true"></a>
                                 </div>
                             </div>
-                            <div class="password_eara">
+                            <div class="password_eara" id="password_eara">
                                 <label class="input_tips">
                                     QQ密码
                                 </label>
                                 <div class="input_box">
-                                    <input type="text" class="input_box_style" name="">
-                                    <a class="input_box_del" href="javascript:void(0)"></a>
+                                    <input type="password" class="input_box_style" name="" id="password_input">
+                                    <a class="input_box_del" href="javascript:void(0)" hidden="true"></a>
                                 </div>
                             </div>
                             <div class="submit">
-                                <a class="submit_button" type="submit" href="javascript:void(0)">
+                                <a class="submit_button" id="submit" type="submit" href="javascript:void(0)">
                                     <input class="btn" type="submit" name="" value="登 录">
                                 </a>
                                 <div class="check_tips" title="为了确保你的信息安全，不建议在网吧等公共环境勾选此项">
-                                    <a class="uncheck" href="javascript:void(0)"></a>
+                                    <a class="uncheck" id="webCheck" href="javascript:void(0)"></a>
                                     <label class="check_tips_word">下次自动登录</label>
                                 </div>
                             </div>
-                        </form>
+                        </div>
+                        <!-- </form> -->
                     </div>
                     <div class="bottom">
                         <a href="https://aq.qq.com/cn2/findpsw/pc/pc_find_pwd_input_account" target="_blank">忘了密码？</a>
@@ -104,7 +112,7 @@
             </div>
         </div>
     </div>
-
+    <!-- 等待文档加载完成 -->
     <script src="js/xlogin.js"></script>
 </body>
 

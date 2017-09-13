@@ -164,6 +164,37 @@ a:hover {
     position: absolute;
 }
 
+/* 弹出来的手机 QQ 图片 */
+.qr_tips {
+	left: 163px;
+	top: 46px;
+	height: 200px;
+	width: 160px;
+	opacity: 0;
+	z-index: 999; /* 一定要弹出来 */
+	position: absolute;
+}
+
+.qr_tips .qr_tips_pic {
+	width: 160px;
+	height: 196px;
+	top: 0;
+	position: absolute;
+	background: url(../img/small_24_tiny.png);
+}
+
+/* 真正的 hover 区域 */
+.qlogin .qr_eara .qr_for_hover {
+	background: #000;
+	height: 134px;
+	width: 134px;
+	left: 12px;
+	top: 29px;
+	opacity: 0.01;
+	z-index: 1000; /* 要比手机 QQ 那个要高 */
+	position: absolute;
+}
+
 /* 使用QQ手机版扫描登录 */
 .qlogin .qr_eara .qr_app_name {
 	bottom: 0;
@@ -212,7 +243,7 @@ a:hover {
 	position: absolute;
 }
 
-/* 这也是个图片，啊啊啊 */
+/* 没选的，这也是个图片，啊啊啊 */
 .check_tips .uncheck {
 	height: 16px;
 	width: 16px;
@@ -220,6 +251,16 @@ a:hover {
 	float: left;
 	background-image: url(../img/icon_ptloginpage1e9c5d.png);
 	background-position: -38px -16px;
+}
+
+/* 选了的，这也是个图片，啊啊啊 */
+.check_tips .check {
+	height: 16px;
+	width: 16px;
+	border: 1px solid #96a5b4;
+	float: left;
+	background-image: url(../img/icon_ptloginpage1e9c5d.png);
+	background-position: -59px -17px;
 }
 
 /* 下次自动登录 */
@@ -288,6 +329,17 @@ a:hover {
 	font-size: 14px;
 	line-height: 16px;
 	color: #aaa;
+	cursor: text;
+    position: absolute;
+}
+
+/* 就那句看起来是内嵌在输入框的提示，万万没想到是这样实现的 */
+.web_login .input_tips_focus {
+	top: 12px;
+	left: 13px;
+	font-size: 14px;
+	line-height: 16px;
+	color: #ddd;
 	cursor: text;
     position: absolute;
 }
@@ -368,6 +420,7 @@ a:hover {
 	background-color: #5a98de;
 	border-radius: 3px;
 	left: 0;
+	z-index: 1000; /* 被选框挡住了一下 */
     position: absolute;
 }
 
@@ -399,4 +452,29 @@ a:hover {
 	font-size: 12px;
     text-align: right;
     position: absolute;
+}
+
+/* 二维码动画 */
+@keyframes qrSlide {
+	0% {left: 12px;}
+	10% {left: -40px;}
+	90% {left: -40px;}
+	100% {left: 12px;}
+}
+
+@keyframes qrTipsShow {
+	0% {opacity: 0;display: block;}
+	10% {opacity: 1;}
+	90% {opacity: 1;}
+	100% {opacity: 0;display: none;}
+}
+
+.qr_img_box_slide {
+    animation: qrSlide 10s;
+    -webkit-animation: qrSlide 10s;
+}
+
+.qr_tips_show {
+    animation: qrTipsShow 10s;
+    -webkit-animation: qrTipsShow 10s;
 }
